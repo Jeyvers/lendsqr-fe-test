@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { urls } from '../assets/strings/exports';
 import useFetch from '../hooks/useFetch';
 
-const UserDetails = () => {
-  const data = useFetch(urls.userDetails);
+const users = () => {
+  const data = useFetch(urls.users);
   console.log(data);
 
-  return <div>UserDetails</div>;
+  return <div>users</div>;
 };
 
-export default UserDetails;
+export default users;

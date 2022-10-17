@@ -1,4 +1,4 @@
-import React from 'react';
+import { FormEvent } from 'react';
 import {
   Avatar,
   bellIcon,
@@ -6,13 +6,19 @@ import {
   Logo,
   searchIcon,
 } from '../assets/strings/exports';
+import { Children } from '../assets/strings/model';
+import styles from '../css/dashboard.module.css';
 
-const DashboardWrapper = () => {
+const DashboardWrapper = ({ children }: Children) => {
+  const handleSearch = (e: FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
-    <div>
-      <header>
+    <div className={styles.container}>
+      <header className={styles.header}>
         <img src={Logo} alt='lendsqr-logo' />
-        <form>
+        <form className={styles.searchForm} onSubmit={handleSearch}>
           <input
             type='search'
             name='search'
@@ -23,15 +29,20 @@ const DashboardWrapper = () => {
             <img src={searchIcon} alt='search-icon' />
           </button>
         </form>
-        <div>
+        <div className={styles.profile}>
           <a href='/'>Docs</a>
 
           <img src={bellIcon} alt='notifications' />
-          <img src={Avatar} alt='current-user' />
-          <p>Adejidi</p>
-          <img src={caretDownBlue} alt='' />
+
+          <div>
+            <img className={styles.Avatar} src={Avatar} alt='current-user' />
+            <p>Adejidi</p>
+            <img src={caretDownBlue} alt='' />
+          </div>
         </div>
       </header>
+      <aside className={styles.aside}>ASIDE</aside>
+      <div className={styles.children}>{children}</div>
     </div>
   );
 };

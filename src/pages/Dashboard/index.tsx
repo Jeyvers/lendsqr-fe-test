@@ -1,12 +1,14 @@
 import React from 'react';
-import UserDetails from '../../components/UserDetails';
+import DashboardWrapper from '../../components/DashboardWrapper';
+import UserDetails from '../../components/Users';
 
 const Dashboard = () => {
   return (
-    <div>
-      Dashboard
-      <UserDetails />
-    </div>
+    <DashboardWrapper>
+      <>
+        <UserDetails />
+      </>
+    </DashboardWrapper>
   );
 };
 

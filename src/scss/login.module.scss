@@ -8,11 +8,11 @@
   src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('opentype');
 }
 
-* {
-  font-family: Avenir Next, Avenir, sans-serif;
-}
-
 .container {
+  * {
+    font-family: Avenir Next, Avenir, sans-serif;
+  }
+
   max-width: 1200px;
   margin: 1rem auto;
 
@@ -48,7 +48,7 @@
   padding: 0;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
